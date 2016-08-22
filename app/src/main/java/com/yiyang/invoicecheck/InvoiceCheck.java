@@ -16,7 +16,7 @@ public class InvoiceCheck {
     private InvoiceData[] invData;
 
     public static boolean isInvoiceNumber(String contents) {
-        return contents.toUpperCase().matches("[A-Z]{2}[0-9]{8}.*");
+        return contents.substring(0,10).toUpperCase().matches("[A-Z]{2}[0-9]{8}.*");
     }
 
     public InvoiceCheck(String url) {

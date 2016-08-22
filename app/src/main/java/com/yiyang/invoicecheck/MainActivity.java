@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 String contents = data.getStringExtra("SCAN_RESULT");    //取得QR Code內容
                 if (InvoiceCheck.isInvoiceNumber(contents))
-                    ((EditText) findViewById(R.id.txtInvoiceNum)).setText(contents.substring(0,10));
+                    ((EditText) findViewById(R.id.txtInvoiceNum)).setText(contents.substring(2,10));
                 else
                     ((EditText) findViewById(R.id.txtInvoiceNum)).setText("找不到");
             }
