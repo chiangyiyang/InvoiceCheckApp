@@ -32,7 +32,7 @@ public class InvoiceCheck {
             e.printStackTrace();
         }
         Document doc = idl.doc;
-
+//
         while (doc == null) {
             try {
                 Thread.sleep(1000);
