@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">發票兌獎</string>
+    <string name="check">兌獎</string>
+    <string name="scan_qr_code">掃描二維條碼</string>
+</resources>
