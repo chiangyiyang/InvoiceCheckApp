@@ -24,31 +24,6 @@ public class InvoiceCheck {
     }
 
     public boolean loadData() {
-//        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-//        DocumentBuilder db = null;
-//        Document doc = null;
-//        try {
-//            db = dbf.newDocumentBuilder();
-//            doc = db.parse(new URL(url).openStream());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        NodeList titles = doc.getElementsByTagName("title");
-//        NodeList descriptions = doc.getElementsByTagName("description");
-//
-//        invData = new InvoiceData[titles.getLength() - 1];
-//        for (int i = 1; i < titles.getLength(); i++) {
-//            String[] items = descriptions.item(i).getTextContent().split("</p><p>");
-//            invData[i - 1] = new InvoiceData(
-//                    titles.item(i).getTextContent(),
-//                    items[0].replace("<p>", "").replace("特別獎：", ""),
-//                    items[1].replace("特獎：", ""),
-//                    items[2].replace("頭獎：", ""),
-//                    items[3].replace("</p>", "").replace("增開六獎：", ""));
-//        }
-
-
         InvoiceDataLoader idl = new InvoiceDataLoader(url);
         idl.start();
         try {
