@@ -23,6 +23,7 @@ public class InvoiceCheck {
         this.url = url;
     }
 
+
     public boolean loadData() {
         InvoiceDataLoader idl = new InvoiceDataLoader(url);
         idl.start();
