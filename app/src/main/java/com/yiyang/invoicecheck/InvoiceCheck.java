@@ -16,7 +16,7 @@ public class InvoiceCheck {
     private InvoiceData[] invData;
 
     public static boolean isInvoiceNumber(String contents) {
-        return contents.substring(0,10).toUpperCase().matches("[A-Z]{2}[0-9]{8}.*");
+        return contents.substring(0, 10).toUpperCase().matches("[A-Z]{2}[0-9]{8}.*");
     }
 
     public InvoiceCheck(String url) {
@@ -64,11 +64,13 @@ public class InvoiceCheck {
             System.out.println(invData[i].toString() + "\n");
     }
 
-    public String checkNumber(String chkNum) {
+    public String checkNumber(String chkNum, String chkPeriod) {
         String result = "";
         for (int i = 0; i < invData.length; i++) {
-            if (chkNum.equals(invData[i].price10M))
-                result += "中了" + invData[i].periodInfo + "月的特別獎 " + invData[i].price10M + " (1000萬)\n";
+            if (!invData[i].periodInfo.equals(chkPeriod)) continue;
+
+                if (chkNum.equals(invData[i].price10M))
+                    result += "中了" + invData[i].periodInfo + "月的特別獎 " + invData[i].price10M + " (1000萬)\n";
             if (chkNum.equals(invData[i].price2M))
                 result += "中了" + invData[i].periodInfo + "月的特獎 " + invData[i].price2M + " (200萬)\n";
 
